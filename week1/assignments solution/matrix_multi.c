@@ -23,9 +23,14 @@ int main()
 			c[i][j] = 0;
 		}
 	for (int i = 0; i < n; i++)
-		for (int j = 0; j < n; j++)
-			for (int k = 0; k < n; k++)
-				c[i][j] += a[i][k]*b[k][j];
+		for (int k = 0; k < n; k++)
+		{
+			double sum = 0;
+			for (int j = 0; j < m; j++)
+				sum += a[i][j] * b[j][k];
+			c[i][k] = sum;
+		}
+
 	//	#prin t yhe results
 	for (int i = 0; i < n; i++){
 			for (int j = 0; j < n; j++)
